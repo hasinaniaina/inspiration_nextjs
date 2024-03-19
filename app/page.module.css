@@ -1,0 +1,254 @@
+
+.header {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.header video {
+    width: 100%;
+    position: absolute;
+    object-fit: cover;
+    height: 100%;
+}
+
+.header .logoNav {
+    position: absolute;
+    width: calc(100% - 4rem);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 5rem;
+    color: #fff;
+    z-index: 2;
+}
+
+.header .logoNav .logo p {
+    font-size: 2rem;
+    letter-spacing: -1rem;
+    letter-spacing: -0.3rem;
+    text-shadow: 0 2px black;
+    text-transform: uppercase;
+}
+
+
+.header .logoNav nav p {
+    padding: 0.2rem 2rem;
+    color: #fff;
+    text-shadow: 0 5px 5px rgba(0,0,0,0.2);
+    backdrop-filter: blur(15px);
+    box-shadow:  10px 0 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    border-radius: 10px;
+}
+.header .ulActive{
+  color: #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-transform: uppercase;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  display: flex;
+  height: fit-content;
+  z-index: 5;
+}
+
+.header ul {
+  color: #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-transform: uppercase;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  display: flex;
+  height: 0;
+  z-index: 5;
+  transition: .5s;
+}
+
+.header ul li {
+    list-style: none;
+    overflow: hidden;
+
+}
+
+.header ul li a {
+  display: block;
+  text-decoration: none;
+  padding:  .15rem 2rem;
+  background-color: #fff;
+  box-shadow:  10px 0 15px rgba(0, 0, 0, 0.1);
+  color: #000;
+  transition: .5s;
+  border-radius: 10px;
+  font-weight: 600;
+  transform: translateY(33px);
+}
+
+.header ul li a:hover {
+    background-color: #db7b05;
+    color: #fff;
+}
+
+.header ul li .ahrefActive{
+    display: block;
+    text-decoration: none;
+    padding:  .15rem 2rem;
+    background-color: #fff;
+    box-shadow:  10px 0 15px rgba(0, 0, 0, 0.1);
+    color: #000;
+    transition: .5s;
+    border-radius: 10px;
+    font-weight: 600;
+    transform: translateY(0);
+
+}
+
+ .glass {
+    width: 40%;
+    height: 100%;
+    position: absolute;
+    backdrop-filter: blur(15px);
+    box-shadow:  10px 0 15px rgba(0, 0, 0, 0.1);
+    transition: 0.8s;
+}
+
+@media screen and (max-width:808px) {
+    .header .glass {
+        width: 50%;
+    }
+}
+
+.glassActived {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backdrop-filter: blur(15px);
+    box-shadow:  10px 0 15px rgba(0, 0, 0, 0.1);
+    transition: 0.8s;
+}
+
+
+.header .sliderContainer {
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    left: 50%;
+    width: fit-content;
+    height: 417px;
+    width: 417px;
+    transform: translate(10%, -50%);
+} 
+
+@media screen and (max-width:1086px) {
+    .header .sliderContainer {
+        transform: translate(-5%, -50%);
+    }
+}
+
+@media screen and (max-width:870px) {
+    .header .sliderContainer {
+        transform: translate(-10%, -50%);
+    }
+}
+
+@media screen and (max-width:808px) {
+    .header .sliderContainer {
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media screen and (max-width:428px) {
+  .header .sliderContainer {
+    width: 300px;
+  }
+}
+
+.sliderItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header .sliderContainer .citation {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    height: 417px;
+    width: 417px;
+    box-shadow: inset 20px 20px 20px rgba(0,0,0,0.05),
+     25px 35px 20px rgba(0,0,0,0.05),
+     25px 30px 30px rgba(0,0,0,0.05), 
+     inset -20px -20px 20px rgba(255,255,255,0.9);
+     border-radius:27% 73% 51% 49% / 66% 64% 36% 34% ;
+     animation: bubble 15s ease-in infinite;
+     align-items: center;
+     opacity: 1;
+     padding: 0 53px;
+     transition: 5s;
+     flex-direction: column;
+     position: relative;
+}
+
+.header .sliderContainer .citation p:last-child {
+    font-size: 1rem;
+    align-self: end;
+    position: absolute;
+    bottom: 7rem;
+}
+
+@media screen and (max-width:428px) {
+  .header .sliderContainer .citation {
+    width: 300px;
+  }
+}
+@keyframes bubble {
+    0% {
+        border-radius:27% 73% 51% 49% / 66% 64% 36% 34% ;
+    }
+
+    25% {
+        border-radius:28% 72% 60% 40% / 30% 54% 46% 70% ;
+    }
+
+    50% {
+        border-radius:43% 57% 31% 69% / 40% 53% 47% 60% ;
+    }
+
+    75% {
+        border-radius:60% 40% 50% 50% / 46% 61% 39% 54%  ;
+    }
+
+    100% {
+        border-radius:27% 73% 51% 49% / 66% 64% 36% 34% ;
+    }
+}
+
+.header .sliderContainerHidden {
+  overflow: hidden;
+  opacity: 0;
+  transition: 5s;
+}
+
+.header .sliderContainerHidden p {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
