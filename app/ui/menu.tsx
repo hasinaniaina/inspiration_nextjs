@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { getQuotesRelatedToTagName, getTags } from '../api/data';
 import { MouseEvent, SetStateAction, useEffect, useState } from 'react';
 import Link from 'next/link';
-import {motion, AnimatePresence} from "framer-motion";
+import {motion} from "framer-motion";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHamburger } from '@fortawesome/free-solid-svg-icons';
 
@@ -37,39 +37,39 @@ export default  function Menu(
   }  
   
   return (
-    <AnimatePresence mode='wait'>
-      <motion.div
-      initial={{opacity:0}}
-      animate={{opacity: 1}}
-      transition={{duration: 0.9, ease:"easeIn"}}
-      className={styles.logoNav}>
-            <div className={styles.logo}>
-                <p>Inspiration.</p>
-            </div>
-            <nav>
-                <p id={styles.theme} onClick={showMenu}>Theme&nbsp;<FontAwesomeIcon icon={faHamburger}/></p>
-            </nav>
-      </motion.div>        
-      <ul className={clsx( 
-          {
-            [styles.ulActive]: active === true
-          }
-        )}>
-            {tags.map((tag) => {
-              return (
-                <li key={tag._id}>
-                  <Link  href="" className={clsx( 
-                    {
-                      [styles.ahrefActive]: active === true
-                    }
-                  )} onClick={(e) => {
-                    getQuotes(e, tag.name);
-                  }}>{tag.name}</Link>
-                </li>
-              )
-            })}
-        </ul>
-    </AnimatePresence>
+    <>
+    <motion.div
+    initial={{opacity:0}}
+    animate={{opacity: 1}}
+    transition={{duration: 0.9, ease:"easeIn"}}
+    className={styles.logoNav}>
+          <div className={styles.logo}>
+              <p>Inspiration.</p>
+          </div>
+          <nav>
+              <p id={styles.theme} onClick={showMenu}>Theme&nbsp;<FontAwesomeIcon icon={faHamburger}/></p>
+          </nav>
+    </motion.div>        
+    <ul className={clsx( 
+        {
+          [styles.ulActive]: active === true
+        }
+      )}>
+          {tags.map((tag, index) => {
+            return (
+              <li key={index}>
+                <Link  href="" className={clsx( 
+                  {
+                    [styles.ahrefActive]: active === true
+                  }
+                )} onClick={(e) => {
+                  getQuotes(e, tag.name);
+                }}>{tag.name}&nbsp;<span>({tag.quoteCount})</span></Link>
+              </li>
+            )
+          })}
+      </ul>
+    </>
   )
 }
 

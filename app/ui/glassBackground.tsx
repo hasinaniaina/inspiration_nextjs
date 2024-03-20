@@ -1,10 +1,9 @@
 import clsx from 'clsx';
 import styles from '@/app/page.module.css';
-import {motion, AnimatePresence} from "framer-motion";
+import {motion} from "framer-motion";
 
 function GlassBackground({active}:{active?: boolean}) {
   return (
-    <AnimatePresence mode='wait'>
       <motion.div 
       initial={{translateX: "-100%"}}
       animate={{translateX: "0"}}
@@ -16,7 +15,6 @@ function GlassBackground({active}:{active?: boolean}) {
         }
         )}>
       </motion.div>
-    </AnimatePresence>
   )
 }
 
