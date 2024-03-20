@@ -5,7 +5,7 @@ import {useRef, useState} from 'react';
 import Menu from '@/app/ui/menu';
 import SwiperSlider from './ui/swiperSlider';
 import GlassBackground from './ui/glassBackground';
-import clsx from 'clsx';
+import SocialMedia from './ui/socialMedia';
 
 export default function Home() {
   const [quotes, setQuotes] = useState<Array<Record<string, string>>>([]);
@@ -25,6 +25,7 @@ export default function Home() {
         <Menu active={active} showMenu={showMenu} setActive={setActive} setQuotes={setQuotes}/>
         <GlassBackground active={active} />
         <SwiperSlider active={active} quotes={quotes} setQuotes={setQuotes}/>
+        <SocialMedia active={active}/>
     </header>
   );
 }

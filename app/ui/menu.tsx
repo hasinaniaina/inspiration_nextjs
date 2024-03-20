@@ -4,6 +4,9 @@ import clsx from 'clsx';
 import { getQuotesRelatedToTagName, getTags } from '../api/data';
 import { MouseEvent, SetStateAction, useEffect, useState } from 'react';
 import Link from 'next/link';
+import {motion, AnimatePresence} from "framer-motion";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHamburger } from '@fortawesome/free-solid-svg-icons';
 
 export default  function Menu(
   {active, showMenu, setActive, setQuotes
@@ -34,15 +37,19 @@ export default  function Menu(
   }  
   
   return (
-    <>
-      <div className={styles.logoNav}>
+    <AnimatePresence mode='wait'>
+      <motion.div
+      initial={{opacity:0}}
+      animate={{opacity: 1}}
+      transition={{duration: 0.9, ease:"easeIn"}}
+      className={styles.logoNav}>
             <div className={styles.logo}>
                 <p>Inspiration.</p>
             </div>
             <nav>
-                <p id={styles.theme} onClick={showMenu}>Theme</p>
+                <p id={styles.theme} onClick={showMenu}>Theme&nbsp;<FontAwesomeIcon icon={faHamburger}/></p>
             </nav>
-      </div>        
+      </motion.div>        
       <ul className={clsx( 
           {
             [styles.ulActive]: active === true
@@ -62,7 +69,7 @@ export default  function Menu(
               )
             })}
         </ul>
-    </>
+    </AnimatePresence>
   )
 }
 

@@ -42,6 +42,10 @@
     cursor: pointer;
     border-radius: 10px;
 }
+
+.header .logoNav nav p:hover{
+    font-weight: bold;
+}
 .header .ulActive{
   color: #000;
   position: absolute;
@@ -54,7 +58,9 @@
   flex-wrap: wrap;
   justify-content: center;
   display: flex;
-  height: fit-content;
+  height: 70dvh;
+  width: 100%;
+  overflow-y: scroll;
   z-index: 5;
 }
 
@@ -193,9 +199,9 @@
      border-radius:27% 73% 51% 49% / 66% 64% 36% 34% ;
      animation: bubble 15s ease-in infinite;
      align-items: center;
-     opacity: 1;
+     transform: scale(1);
      padding: 0 53px;
-     transition: 5s;
+     transition: 1s;
      flex-direction: column;
      position: relative;
 }
@@ -236,12 +242,62 @@
 
 .header .sliderContainerHidden {
   overflow: hidden;
-  opacity: 0;
+  transform: scale(0);
   transition: 5s;
 }
 
 .header .sliderContainerHidden p {
   display: none;
+}
+
+
+.socialMedia {
+    position: absolute;
+    bottom: 20px;
+    margin-left: 10px;
+    display: flex;
+}
+
+.socialMedia a {
+    padding: 0.5rem 2rem;
+    color: #ffff;
+    margin-right: 13px;
+    border-radius: 3px;
+    display: flex;
+    transform: translateY(0);
+    transition: .5s;
+    font-size: .7rem;
+    align-items: center;
+}
+
+.socialMedia a svg, .socialMediaHidden a svg {
+    width: 1rem;
+    margin-right: 3px;
+}
+
+.socialMedia a:hover {
+    background-color: #d48111;
+    color: #fff;
+    font-weight: bold;
+}
+
+.socialMediaHidden {
+    position: absolute;
+    bottom: 20px;
+    margin-left: 10px;
+    display: flex;
+}
+
+.socialMediaHidden a{
+    padding: 0.5rem 2rem;
+    color: #ffff;
+    margin-right: 13px;
+    border-radius: 3px;
+    display: flex;
+    font-size: .7rem;
+    transform: translateY(50rem);
+    transition: .5s;   
+    align-items: center;
 }
 
 
