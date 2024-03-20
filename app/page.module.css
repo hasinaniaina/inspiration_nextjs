@@ -21,6 +21,7 @@
     justify-content: space-between;
     height: 5rem;
     color: #fff;
+    width: 100%;
     z-index: 2;
 }
 
